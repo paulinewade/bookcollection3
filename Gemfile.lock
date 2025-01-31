@@ -324,7 +324,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
-  webpacker
+  webpacker (~> 5.0)
   yaml_db
 
 RUBY VERSION
