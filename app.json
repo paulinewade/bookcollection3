@@ -1,5 +1,5 @@
 {
-  "stack": "heroku-24"
+  "stack": "heroku-24",
   "addons": [
     "heroku-postgresql:in-dyno"
   ],
@@ -7,10 +7,18 @@
     "review": {
       "addons": [
         "heroku-postgresql:in-dyno"
-      ]
+      ],
+      "scripts": {
+        "postdeploy": "bundle exec rails db:schema:load"
+      }
     }
   },
-  "scripts": {
-    "postdeploy": "rails db:migrate"
-  }
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
 }
