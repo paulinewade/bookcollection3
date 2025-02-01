@@ -1,3 +1,16 @@
 {
   "stack": "heroku-24"
+  "addons": [
+    "heroku-postgresql:in-dyno"
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-postgresql:in-dyno"
+      ]
+    }
+  },
+  "scripts": {
+    "postdeploy": "rails db:migrate"
+  }
 }
